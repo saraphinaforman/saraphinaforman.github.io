@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saraphina Forman</title>
+  <title>Your Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Courier New', monospace;
       margin: 0;
       padding: 0;
+      background-color: #f0f0f0;
+      color: #000;
     }
 
     header {
@@ -21,7 +23,7 @@
 
     nav {
       width: 200px;
-      background-color: #f4f4f4;
+      background-color: #f0f0f0;
       padding: 20px;
       position: fixed;
       height: 100%;
@@ -30,7 +32,7 @@
 
     nav a {
       text-decoration: none;
-      color: #333;
+      color: #000;
       display: block;
       margin-bottom: 10px;
     }
@@ -48,6 +50,18 @@
       position: fixed;
       bottom: 0;
       width: 100%;
+      display: none;
+    }
+
+    .content {
+      font-size: 1.5em;
+      line-height: 1.6;
+    }
+
+    /* Style the home page differently */
+    #art {
+      background-color: #fefefe;
+      padding: 40px;
     }
   </style>
 </head>
@@ -68,37 +82,48 @@
 
   <section id="art">
     <h2>Art Page</h2>
-    <!-- Your art content goes here -->
+    <div class="content">This is the art page!</div>
   </section>
 
   <section id="video">
     <h2>Video Page</h2>
-    <!-- Your video content goes here -->
+    <div class="content">This is the video page!</div>
   </section>
 
   <section id="sound">
     <h2>Sound Page</h2>
-    <!-- Your sound content goes here -->
+    <div class="content">This is the sound page!</div>
   </section>
 
   <section id="text">
     <h2>Text Page</h2>
-    <!-- Your text content goes here -->
+    <div class="content">This is the text page!</div>
   </section>
 
   <section id="research">
     <h2>Research Page</h2>
-    <!-- Your research content goes here -->
+    <div class="content">This is the research page!</div>
   </section>
 
   <section id="about">
     <h2>About Page</h2>
-    <!-- Your about content goes here -->
+    <div class="content">This is the about page!</div>
   </section>
 
   <footer>
     <p>Contact: your.email@example.com | Phone: (123) 456-7890</p>
   </footer>
+
+  <script>
+    // Show the footer when scrolling down
+    window.onscroll = function () {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        document.querySelector('footer').style.display = 'block';
+      } else {
+        document.querySelector('footer').style.display = 'none';
+      }
+    };
+  </script>
 </body>
 
 </html>
