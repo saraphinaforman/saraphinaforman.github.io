@@ -4,126 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Portfolio</title>
+  <title>Your Portfolio - Art</title>
   <style>
     body {
-      font-family: 'Courier New', monospace;
+      font-family: "Times New Roman", Times, serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
-      color: #000;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-
-    nav {
-      width: 200px;
-      background-color: #f0f0f0;
-      padding: 20px;
-      position: fixed;
-      height: 100%;
-      overflow-y: auto;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000;
-      display: block;
-      margin-bottom: 10px;
+      background-color: #f4f4f4;
     }
 
     section {
-      margin-left: 220px;
+      text-align: center;
       padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 50px;
     }
 
     footer {
-      background-color: #333;
-      color: #fff;
       text-align: center;
       padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: none;
-    }
-
-    .content {
-      font-size: 1.5em;
-      line-height: 1.6;
-    }
-
-    /* Style the home page differently */
-    #art {
-      background-color: #fefefe;
-      padding: 40px;
+      background-color: #333;
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Your Name</h1>
-  </header>
-
-  <nav>
-    <a href="#art">Art</a>
-    <a href="#video">Video</a>
-    <a href="#sound">Sound</a>
-    <a href="#text">Text</a>
-    <a href="#research">Research</a>
-    <a href="#about">About</a>
-  </nav>
-
-  <section id="art">
-    <h2>Art Page</h2>
-    <div class="content">This is the art page!</div>
-  </section>
-
-  <section id="video">
-    <h2>Video Page</h2>
-    <div class="content">This is the video page!</div>
-  </section>
-
-  <section id="sound">
-    <h2>Sound Page</h2>
-    <div class="content">This is the sound page!</div>
-  </section>
-
-  <section id="text">
-    <h2>Text Page</h2>
-    <div class="content">This is the text page!</div>
-  </section>
-
-  <section id="research">
-    <h2>Research Page</h2>
-    <div class="content">This is the research page!</div>
-  </section>
-
-  <section id="about">
-    <h2>About Page</h2>
-    <div class="content">This is the about page!</div>
+  <section>
+    <h2>This is the Art Page!</h2>
+    <p>Click on the links in the navigation to explore other pages.</p>
   </section>
 
   <footer>
     <p>Contact: your.email@example.com | Phone: (123) 456-7890</p>
   </footer>
-
-  <script>
-    // Show the footer when scrolling down
-    window.onscroll = function () {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        document.querySelector('footer').style.display = 'block';
-      } else {
-        document.querySelector('footer').style.display = 'none';
-      }
-    };
-  </script>
 </body>
 
 </html>
