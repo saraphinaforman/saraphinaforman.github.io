@@ -16,12 +16,21 @@
         max-width: 40vw;
         height: auto;
     }
+    .float-parent-element { 
+    width: 50%; 
+    } 
+    .float-child-element { 
+        float: left; 
+        width: 50%; 
+    } 
 </style>
 <body>
     <header>
         <h1><span style="color: black;">SARAPHINA FORMAN  </span><span style="color: white;">  ART</span></h1>
     </header>
-<div style="height:100vw;width:15%;top:50px;left:0px; display: inline-block; background: purple;">
+
+
+<div style="height:100vw;width:15%; display: inline-block; left-align: 0px; vertical-align: 50px; background: purple;">
     <a href="index.html">ART</a>
     <br>
     <a href="videopage.html">VIDEO</a>
@@ -34,26 +43,34 @@
     <br>
     <a href="aboutpage.html">ABOUT</a>
 </div>
- <div style="height:100vw;width:42.5%; display: inline-block; left-align: 0px; vertical-align: 50px; overflow: scroll; background: green;">
-     <img src="brickedoverwindows.png" alt="Bricked Over Windows">
-         <figcaption>"Bricked Over Windows," oil on canvas, 3'x4', 2023.</figcaption>
-     <img src="paintedover1.png" alt="Painted Over I">
-         <figcaption>"Painted Over I," oil on masonite, 9"x12", 2023.</figcaption>
-     <br>
-     <img src="paintedover2.png" alt="Painted Over II">
-         <figcaption>"Painted Over II," oil on masonite panel, 38"x42", 2023.</figcaption>
-     <img src="evanandryan.png" alt="Evan and Ryan">
-         <figcaption>"Evan and Ryan," oil on canvas, 42"x48", 2023.</figcaption>
-     <br>
- </div>
-<div style="height:100vw;width:42.5%;top:50px;display: inline-block; overflow: scroll; background: black;">
-     <img src="tablescene.png" alt="Table Scene">
-         <figcaption>"Table Scene," oil on canvas, 5'x6', 2023.</figcaption>
-     <img src="sandeddown.png" alt="Sanded Down Collection">
-         <figcaption>"Sanded Down Collection," acrylic and collage on masonite and canvas panels (10"x24"; 9"x12"; 9"x12"; 9"x12), 2023.</figcaption>
-     <br>
-     <img src="recliningfigure.png" alt="Reclining Figure in my Room">
-         <figcaption>"Reclining Figure in my Room," acrlic on stretched fabric, 24"x36', 2023.</figcaption>
- </div>
+    
+<div class="float-parent-element">
+  <div class="float-child-element">  
+    <div style="height:100vw;width:42.5%; display: inline-block; overflow: scroll; background: green;">
+         <img src="brickedoverwindows.png" alt="Bricked Over Windows">
+             <figcaption>"Bricked Over Windows," oil on canvas, 3'x4', 2023.</figcaption>
+         <img src="paintedover1.png" alt="Painted Over I">
+             <figcaption>"Painted Over I," oil on masonite, 9"x12", 2023.</figcaption>
+         <br>
+         <img src="paintedover2.png" alt="Painted Over II">
+             <figcaption>"Painted Over II," oil on masonite panel, 38"x42", 2023.</figcaption>
+         <img src="evanandryan.png" alt="Evan and Ryan">
+             <figcaption>"Evan and Ryan," oil on canvas, 42"x48", 2023.</figcaption>
+         <br>
+    </div>
+  </div>
+  <div class="float-child-element">
+      <div style="height:100vw;width:42.5%;top:50px;display: inline-block; overflow: scroll; background: black;">
+         <img src="tablescene.png" alt="Table Scene">
+             <figcaption>"Table Scene," oil on canvas, 5'x6', 2023.</figcaption>
+         <img src="sandeddown.png" alt="Sanded Down Collection">
+             <figcaption>"Sanded Down Collection," acrylic and collage on masonite and canvas panels (10"x24"; 9"x12"; 9"x12"; 9"x12), 2023.</figcaption>
+         <br>
+         <img src="recliningfigure.png" alt="Reclining Figure in my Room">
+             <figcaption>"Reclining Figure in my Room," acrlic on stretched fabric, 24"x36', 2023.</figcaption>
+      </div>
+  </div>
+</div>
+
 </body>
 </html>
