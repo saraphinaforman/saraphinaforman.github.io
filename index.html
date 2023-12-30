@@ -17,11 +17,13 @@
         height: auto;
     }
     .float-parent-element { 
-    width: 50%; 
+        width: 50%; 
+        overflow: scroll
     } 
     .float-child-element { 
         float: left; 
         width: 50%; 
+        overflow: scroll
     } 
 </style>
 <body>
@@ -30,7 +32,7 @@
     </header>
 
 
-<div style="height:100vw;width:15%; display: inline-block; left-align: 0px; vertical-align: 50px; background: purple;">
+<div style="width:15%; float: left; vertical-align: 0px; background: purple;">
     <a href="index.html">ART</a>
     <br>
     <a href="videopage.html">VIDEO</a>
@@ -46,7 +48,7 @@
     
 <div class="float-parent-element">
   <div class="float-child-element">  
-    <div style="height:100vw;width:42.5%; display: inline-block; overflow: scroll; background: green;">
+    <div style="background: green;">
          <img src="brickedoverwindows.png" alt="Bricked Over Windows">
              <figcaption>"Bricked Over Windows," oil on canvas, 3'x4', 2023.</figcaption>
          <img src="paintedover1.png" alt="Painted Over I">
@@ -60,7 +62,7 @@
     </div>
   </div>
   <div class="float-child-element">
-      <div style="height:100vw;width:42.5%;top:50px;display: inline-block; overflow: scroll; background: black;">
+      <div style="background: black;">
          <img src="tablescene.png" alt="Table Scene">
              <figcaption>"Table Scene," oil on canvas, 5'x6', 2023.</figcaption>
          <img src="sandeddown.png" alt="Sanded Down Collection">
