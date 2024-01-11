@@ -8,18 +8,7 @@
             background: rgb(255,255,255);
             background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
             margin: 0;
-            font-family: Arial, sans-serif;
-            padding: 20px; /* Add default padding */
         }
-
-        h1 {
-            color: black; /* Default title color */
-        }
-
-        a {
-            color: black; /* Default link color */
-        }
-
         img {
             display: block;
             margin-left: auto;
@@ -28,18 +17,14 @@
             height: auto;
             cursor: pointer;
         }
-
         .float-parent-element { 
             width: 85%; 
             float: left;
-            margin-top: 20px; /* Add margin to separate from title */
         } 
-
         .float-child-element { 
             float: left; 
             width: 50%; 
         }
-
         .image-container {
             position: relative;
             cursor: pointer;
@@ -52,24 +37,17 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            display: none;
+            display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            display: none;
         }
 
         .fullscreen img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
         }
 
         .caption {
@@ -85,15 +63,15 @@
 </head>
 <body>
     <header>
-        <h1>SARAPHINA FORMAN  <span style="color: white;">  ART</span></h1>
+        <h1><span style="color: black;">SARAPHINA FORMAN  </span><span style="color: white;">  ART</span></h1>
     </header>
 
-    <div style="width:15%; float: left; vertical-align: 0px; margin-top: 20px;">
+    <div style="width:15%; float: left; vertical-align: 0px;">
         <a href="index.html">ART</a>
         <br>
         <a href="videopage.html">VIDEO</a>
         <br>
-        <a href="soundpage.html">AUDIO</a>
+        <a href="audiopage.html">AUDIO</a>
         <br>
         <a href="textpage.html">TEXT</a>
         <br>
@@ -127,13 +105,12 @@
         </div>
     </div>
 
-    <div class="fullscreen" id="fullscreen">
-        <span onclick="closeFullscreen()" class="close-btn">&times;</span>
+    <div class="fullscreen" id="fullscreen" onclick="closeFullscreen()">
+<!--         <span onclick="closeFullscreen()" class="close-btn">&times;</span> -->
+        <span class="close-btn">&times;</span>
         <img id="fullscreen-image" src="" alt="Fullscreen Image">
         <div class="caption" id="fullscreen-caption"></div>
     </div>
-
-    <div class="overlay" onclick="closeFullscreen()"></div>
 
     <script>
         function showFullscreen(imageSrc, captionText) {
@@ -147,8 +124,16 @@
             fullscreen.style.display = 'flex';
         }
 
-        function closeFullscreen() {
-            document.getElementById('fullscreen').style.display = 'none';
+        // function closeFullscreen() {
+        //     document.getElementById('fullscreen').style.display = 'none';
+        // }
+        function closeFullscreen(event) {
+            const fullscreen = document.getElementById('fullscreen');
+            const isClickInsideFullscreen = fullscreen.contains(event.target);
+    
+            if (!isClickInsideFullscreen) {
+                fullscreen.style.display = 'none';
+            }
         }
     </script>
 
