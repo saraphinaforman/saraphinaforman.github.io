@@ -105,37 +105,43 @@
         </div>
     </div>
 
-    <div class="fullscreen" id="fullscreen" onclick="closeFullscreen()">
-<!--         <span onclick="closeFullscreen()" class="close-btn">&times;</span> -->
-        <span class="close-btn">&times;</span>
-        <img id="fullscreen-image" src="" alt="Fullscreen Image">
-        <div class="caption" id="fullscreen-caption"></div>
-    </div>
+<div class="fullscreen" id="fullscreen">
+    <span onclick="closeFullscreen()" class="close-btn">&times;</span>
+    <img id="fullscreen-image" src="" alt="Fullscreen Image">
+    <div class="caption" id="fullscreen-caption"></div>
+</div>
 
-    <script>
-        function showFullscreen(imageSrc, captionText) {
-            const fullscreen = document.getElementById('fullscreen');
-            const fullscreenImage = document.getElementById('fullscreen-image');
-            const fullscreenCaption = document.getElementById('fullscreen-caption');
-            
-            fullscreenImage.src = imageSrc;
-            fullscreenCaption.textContent = captionText;
+<script>
+    function showFullscreen(imageSrc, captionText) {
+        const fullscreen = document.getElementById('fullscreen');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+        const fullscreenCaption = document.getElementById('fullscreen-caption');
+        
+        fullscreenImage.src = imageSrc;
+        fullscreenCaption.textContent = captionText;
 
-            fullscreen.style.display = 'flex';
+        fullscreen.style.display = 'flex';
+
+        // Add an event listener for clicks on the document
+        document.addEventListener('click', closeFullscreenOutside);
+    }
+
+    function closeFullscreen() {
+        document.getElementById('fullscreen').style.display = 'none';
+        // Remove the event listener when closing the fullscreen
+        document.removeEventListener('click', closeFullscreenOutside);
+    }
+
+    function closeFullscreenOutside(event) {
+        const fullscreen = document.getElementById('fullscreen');
+        const isClickInsideFullscreen = fullscreen.contains(event.target);
+
+        if (!isClickInsideFullscreen) {
+            closeFullscreen();
         }
+    }
+</script>
 
-        // function closeFullscreen() {
-        //     document.getElementById('fullscreen').style.display = 'none';
-        // }
-        function closeFullscreen(event) {
-            const fullscreen = document.getElementById('fullscreen');
-            const isClickInsideFullscreen = fullscreen.contains(event.target);
-    
-            if (!isClickInsideFullscreen) {
-                fullscreen.style.display = 'none';
-            }
-        }
-    </script>
 
 </body>
 </html>
