@@ -17,6 +17,12 @@
         margin-right: auto;
         max-width: 40vw;
         height: auto;
+
+        /* new gpt: */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
     }
     .float-parent-element { 
         width: 50%; 
@@ -26,7 +32,27 @@
         float: left; 
         width: 50%; 
         overflow: scroll
-    } 
+    }
+    h1 {
+        text-align: left;
+        flex: 1;
+        padding: 20px;
+    }
+    .audio-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        flex: 3;
+    }
+
+    .audio {
+        width: 300px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 </style>
 <body>
     <header>
@@ -48,13 +74,59 @@
     <a href="aboutpage.html">ABOUT</a>
 </div>
 
-<p>More coming soon!</p>
-    
-<audio controls>
-  <source src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+<p>Coming soon!</p>
 
+<div class="audio-container">
+    <h1>Your Audio Portfolio</h1>
     
+    <div class="audio">
+        <h2>Cacophony poem copy</h2>
+        <audio controls>
+            <source src="Cacophony_poem_copy.m4a" type="audio/m4a">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="audio">
+        <h2>"pixelvoice"-xdiscaudio-inside-2-18-23 copy</h2>
+        <audio controls>
+            <source src="pixelvoice-xdiscaudio-inside-2-18-23_copy.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="audio">
+        <h2>cacaphony-with-8-markov-maryhadalittlelambs copy</h2>
+        <audio controls>
+            <source src="cacaphony-with-8-markov-maryhadalittlelambs_copy.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="audio">
+        <h2>nov14proj_song_saraphina(train song) copy</h2>
+        <audio controls>
+            <source src="nov14proj_song_saraphina_train_song_copy.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="audio">
+        <h2>saraphina_final_browserscape_draft1 7 (ashrei) copy</h2>
+        <audio controls>
+            <source src="saraphina_final_browserscape_draft1_7_ashrei_copy.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div class="audio">
+        <h2>saraphina(virtual space composition)(computeran) copy</h2>
+        <audio controls>
+            <source src="saraphina_virtual_space_composition_computeran_copy.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+</div>
+
 </body>
 </html>
