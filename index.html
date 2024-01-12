@@ -67,18 +67,18 @@
             right: 20px;
             z-index: 9999;
         }
-        #testButton {
+/*         #testButton {
             display: block;
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 9998;
-        }
+        } */
     </style>
 </head>
 <body>
     <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN ciooodscx</span><span style="color: white;">  ART</span></h1>
+        <h1><span style="color: black;">SARAPHINA FORMAN okurrrrr</span><span style="color: white;">  ART</span></h1>
     </header>
 
     <div style="width:15%; float: left; vertical-align: 0px;">
@@ -95,8 +95,8 @@
         <a href="aboutpage.html">ABOUT</a>
     </div>
     
-    <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button>
-    <button id="testButton" onclick="window.location.href='soundpage.html'">hiya!</button>
+<!--     <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button> -->
+<!--     <button id="testButton" onclick="window.location.href='index.html'">hiya!</button> -->
 
 <!--   <script>
     function showFullscreen(imageSrc, caption) {
@@ -160,6 +160,7 @@
         <span onclick="closeFullscreen()" class="close-btn">&times;</span>
         <img id="fullscreen-image" src="" alt="Fullscreen Image">
         <div class="caption" id="fullscreen-caption"></div>
+        <button id="fullscreen-hiddenButton" onclick="window.location.href='index.html'">yayyy</button>
     </div>
 
     <script>
@@ -167,9 +168,11 @@
             const fullscreen = document.getElementById('fullscreen');
             const fullscreenImage = document.getElementById('fullscreen-image');
             const fullscreenCaption = document.getElementById('fullscreen-caption');
+            // const fullscreenButton = document.getElementById('hiddenButton');
             
             fullscreenImage.src = imageSrc;
             fullscreenCaption.textContent = captionText;
+            // fullscreenButton.textContent = buttonElement;
 
             fullscreen.style.display = 'flex';
             buttonElement.style.display = 'block';
