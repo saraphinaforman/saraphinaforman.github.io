@@ -66,11 +66,17 @@
             top: 20px;
             right: 20px;
         }
+        #testButton {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN guyssss</span><span style="color: white;">  ART</span></h1>
+        <h1><span style="color: black;">SARAPHINA FORMAN sick</span><span style="color: white;">  ART</span></h1>
     </header>
 
     <div style="width:15%; float: left; vertical-align: 0px;">
@@ -88,8 +94,9 @@
     </div>
     
     <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button>
+    <button id="testButton" onclick="window.location.href='soundpage.html'">hiya!</button>
 
-  <script>
+<!--   <script>
     function showFullscreen(imageSrc, caption) {
       var image = document.getElementById('image');
       var button = document.getElementById('hiddenButton');
@@ -120,12 +127,12 @@
       alert('Button clicked!');
         window.location.href='index.html';
     }
-  </script>
+  </script> -->
     
     <div class="float-parent-element">
         <div class="float-child-element">  
             <div style="opacity: 100%">
-                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil on canvas, 3\'x4\', 2023.'); showButton();">
+                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil on canvas, 3\'x4\', 2023.', document.getElementById('hiddenButton'))">
                     <img src="brickedoverwindows.png" alt="Bricked Over Windows">
                     <figcaption>"Bricked Over Windows," oil on canvas, 3'x4', 2023.</figcaption>
                 </div>
@@ -154,7 +161,7 @@
     </div>
 
     <script>
-        function showFullscreen(imageSrc, captionText) {
+        function showFullscreen(imageSrc, captionText, buttonElement) {
             const fullscreen = document.getElementById('fullscreen');
             const fullscreenImage = document.getElementById('fullscreen-image');
             const fullscreenCaption = document.getElementById('fullscreen-caption');
@@ -163,11 +170,13 @@
             fullscreenCaption.textContent = captionText;
 
             fullscreen.style.display = 'flex';
+            buttonElement.style.display = 'block';
         }
 
         function closeFullscreen() {
             document.getElementById('fullscreen').style.display = 'none';
         }
+
     </script>
 
 </body>
