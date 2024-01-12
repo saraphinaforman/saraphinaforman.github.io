@@ -5,9 +5,10 @@
     <title>SARAPHINA FORMAN</title>
     <style>
         body {
-            background: rgb(255,0,255);
+            background: rgb(255,255,255);
             background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
             margin: 0;
+            font-family: Arial, sans-serif;
         }
         img {
             display: block;
@@ -28,9 +29,6 @@
         .image-container {
             position: relative;
             cursor: pointer;
-        }
-        p {
-            background-color: #FFFFFF;
         }
 
         .fullscreen {
@@ -61,13 +59,15 @@
             color: #fff;
             text-align: center;
             font-size: 1.2em;
-            background-color: #FFFFFF;
+        }
+        #hiddenButton {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN tessstttttt  </span><span style="color: white;">  ART</span></h1>
+        <h1><span style="color: black;">SARAPHINA FORMAN LITTTTT </span><span style="color: white;">  ART</span></h1>
     </header>
 
     <div style="width:15%; float: left; vertical-align: 0px;">
@@ -84,10 +84,22 @@
         <a href="aboutpage.html">ABOUT</a>
     </div>
     
+    <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button>
+
+    <script>
+        function showButton() {
+            // Get the button element
+            var button = document.getElementById('hiddenButton');
+        
+            // Show the button
+            button.style.display = 'block';
+        }
+    </script>
+    
     <div class="float-parent-element">
         <div class="float-child-element">  
             <div style="opacity: 100%">
-                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil on canvas, 3\'x4\', 2023.')">
+                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil on canvas, 3\'x4\', 2023.'); showButton();">
                     <img src="brickedoverwindows.png" alt="Bricked Over Windows">
                     <figcaption>"Bricked Over Windows," oil on canvas, 3'x4', 2023.</figcaption>
                 </div>
@@ -109,46 +121,32 @@
         </div>
     </div>
 
-<div class="fullscreen" id="fullscreen">
-    <span onclick="closeFullscreen()" class="close-btn">&times;</span>
-    <img id="fullscreen-image" src="" alt="Fullscreen Image">
-    <div class="caption" id="fullscreen-caption"></div>
-</div>
+    <div class="fullscreen" id="fullscreen">
+        <span onclick="closeFullscreen()" class="close-btn">&times;</span>
+        <img id="fullscreen-image" src="" alt="Fullscreen Image">
+        <div class="caption" id="fullscreen-caption"></div>
+    </div>
 
-<script>
-    function showFullscreen(imageSrc, captionText) {
-        const fullscreen = document.getElementById('fullscreen');
-        const fullscreenImage = document.getElementById('fullscreen-image');
-        const fullscreenCaption = document.getElementById('fullscreen-caption');
-        
-        fullscreenImage.src = imageSrc;
-        fullscreenCaption.textContent = captionText;
+    <script>
+        function showFullscreen(imageSrc, captionText) {
+            const fullscreen = document.getElementById('fullscreen');
+            const fullscreenImage = document.getElementById('fullscreen-image');
+            const fullscreenCaption = document.getElementById('fullscreen-caption');
+            
+            fullscreenImage.src = imageSrc;
+            fullscreenCaption.textContent = captionText;
 
-        fullscreen.style.display = 'flex';
-
-        // Add an event listener for clicks on the document
-        document.addEventListener('click', closeFullscreenOutside);
-    }
-
-    function closeFullscreen() {
-        document.getElementById('fullscreen').style.display = 'none';
-        // Remove the event listener when closing the fullscreen
-        document.removeEventListener('click', closeFullscreenOutside);
-    }
-
-    function closeFullscreenOutside(event) {
-        const fullscreen = document.getElementById('fullscreen');
-        const isClickInsideFullscreen = fullscreen.contains(event.target);
-
-        if (!isClickInsideFullscreen) {
-            closeFullscreen();
+            fullscreen.style.display = 'flex';
         }
-    }
-</script>
 
+        function closeFullscreen() {
+            document.getElementById('fullscreen').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
+
 
 <!-- <!DOCTYPE html>
 <html>
