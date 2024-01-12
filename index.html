@@ -65,12 +65,14 @@
             position: fixed;
             top: 20px;
             right: 20px;
+            z-index: 9999;
         }
         #testButton {
             display: block;
             position: fixed;
             top: 20px;
             right: 20px;
+            z-index: 9998;
         }
     </style>
 </head>
@@ -171,6 +173,7 @@
 
             fullscreen.style.display = 'flex';
             buttonElement.style.display = 'block';
+            buttonElement.style.z-index = 9999;
         }
 
         function closeFullscreen() {
