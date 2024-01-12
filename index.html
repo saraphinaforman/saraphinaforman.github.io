@@ -62,12 +62,15 @@
         }
         #hiddenButton {
             display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN LITTTTT </span><span style="color: white;">  ART</span></h1>
+        <h1><span style="color: black;">SARAPHINA FORMAN guyssss</span><span style="color: white;">  ART</span></h1>
     </header>
 
     <div style="width:15%; float: left; vertical-align: 0px;">
@@ -86,15 +89,38 @@
     
     <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button>
 
-    <script>
-        function showButton() {
-            // Get the button element
-            var button = document.getElementById('hiddenButton');
-        
-            // Show the button
-            button.style.display = 'block';
-        }
-    </script>
+  <script>
+    function showFullscreen(imageSrc, caption) {
+      var image = document.getElementById('image');
+      var button = document.getElementById('hiddenButton');
+
+      if (document.fullscreenElement) {
+        // Exit fullscreen
+        document.exitFullscreen();
+        button.style.display = 'none';
+      } else {
+        // Enter fullscreen
+        image.requestFullscreen();
+        button.style.display = 'block';
+      }
+
+      // Add logic to handle the specific image and caption
+      // You can use imageSrc and caption parameters as needed
+      console.log('Image source:', imageSrc);
+      console.log('Caption:', caption);
+    }
+
+    function showButton() {
+      var button = document.getElementById('hiddenButton');
+      button.style.display = 'block';
+    }
+
+    function buttonClick() {
+      // Add your button click logic here
+      alert('Button clicked!');
+        window.location.href='index.html';
+    }
+  </script>
     
     <div class="float-parent-element">
         <div class="float-child-element">  
