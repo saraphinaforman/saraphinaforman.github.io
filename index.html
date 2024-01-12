@@ -64,18 +64,18 @@
             top: 20px;
             right: 20px;
         }
-        #hiddenButton {
+/*         #hiddenButton {
             display: none;
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 9999;
-        }
+        } */
     </style>
 </head>
 <body>
     <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN wedrfgerdfg</span><span style="color: white;">  ART</span></h1>
+        <h1><span style="color: black;">SARAPHINA FORMAN eeeewedrfgerdfg</span><span style="color: white;">  ART</span></h1>
     </header>
 
     <div style="width:15%; float: left; vertical-align: 0px;">
@@ -92,7 +92,7 @@
         <a href="aboutpage.html">ABOUT</a>
     </div>
     
-    <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button>
+<!--     <button id="hiddenButton" onclick="window.location.href='index.html'">Back!</button> -->
 <!--     <button id="testButton" onclick="window.location.href='index.html'">hiya!</button> -->
 
 <!--   <script>
@@ -131,7 +131,7 @@
     <div class="float-parent-element">
         <div class="float-child-element">  
             <div style="opacity: 100%">
-                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil on canvas, 3\'x4\', 2023.', document.getElementById('hiddenButton'))">
+                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil on canvas, 3\'x4\', 2023.')">
                     <img src="brickedoverwindows.png" alt="Bricked Over Windows">
                     <figcaption>"Bricked Over Windows," oil on canvas, 3'x4', 2023.</figcaption>
                 </div>
@@ -161,7 +161,7 @@
     </div>
 
     <script>
-        function showFullscreen(imageSrc, captionText, buttonElement) {
+        function showFullscreen(imageSrc, captionText) {
             const fullscreen = document.getElementById('fullscreen');
             const fullscreenImage = document.getElementById('fullscreen-image');
             const fullscreenCaption = document.getElementById('fullscreen-caption');
