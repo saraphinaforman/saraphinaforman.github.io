@@ -3,72 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <title>SARAPHINA FORMAN</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
+        }
+
+        .sidebar {
+            width: 15%;
+            float: left;
+            height: 100vh;
+            /*background-color: #fff;*/
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 0px; /*width between lines */
+            text-decoration: underline;
+            /*color: black;*/
+        }
+        .sidebar a:hover {
+            background-color: red;
+        }
+        /* Header Styles */
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            /*background: black;*/
+            color: rgb(0, 255, 0);
+            position: fixed;
+            top: 0;
+            left: 15%; /* Offset for the sidebar */
+            z-index: 1;
+
+        }
+        main {
+            margin-left: 15%; /* Offset for the sidebar */
+            margin-top: 100px; /* Offset for header */
+            padding: 20px;
+        }
+
+        .float-parent-element {
+            width: 50%;
+            overflow: scroll;
+        }
+
+        .float-child-element {
+            float: left;
+            width: 50%;
+            overflow: scroll;
+        }
+        p {
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 0 10px; /* Optional: adds some padding if you'd like a little space around the text */
+            display: inline-block; /* This makes the background color only cover the text */
+        }
+        a {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<style>
-    body {
-/*         background: rgb(252,166,69);
-        background: linear-gradient(90deg, rgba(252,166,69,1) 0%, rgba(253,29,29,1) 50%, rgba(70,37,166,1) 100%); */
-        background: rgb(255,255,255);
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
-    }
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 40vw;
-        height: auto;
-    }
-    .float-parent-element { 
-        width: 50%; 
-        overflow: scroll
-    } 
-    .float-child-element { 
-        float: left; 
-        width: 50%; 
-        overflow: scroll
-    } 
-    a {
-/*         background-color: white; */
-    }
-    p {
-        display: inline;
-        background-color: white;
-        margin-bottom: 10px;
-        float: top;
-    }
-</style>
 <body>
+
     <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN  </span><span style="color: white;">  RESEARCH</span></h1>
+        <h1><span>SARAPHINA FORMAN</span> <span style="color: rgb(149, 0, 255);text-decoration-line: none;">RESEARCH</span></h1>
     </header>
 
+    <div class="sidebar">
+        <a href="index.html">ART</a>
+        <a href="videopage.html">VIDEO</a>
+        <a href="soundpage.html">AUDIO</a>
+        <a href="textpage.html">TEXT</a>
+        <a href="researchpage.html">RESEARCH</a>
+        <a href="aboutpage.html">ABOUT</a>
+    </div>
 
-<div style="width:15%; float: left; height: 100vh;">
-    <a href="index.html">ART</a>
-    <br>
-    <a href="videopage.html">VIDEO</a>
-    <br>
-  <a href="soundpage.html">AUDIO</a>
-    <br>
-    <a href="textpage.html">TEXT</a>
-    <br>
-    <a href="researchpage.html">RESEARCH</a>
-    <br>
-    <a href="aboutpage.html">ABOUT</a>
-</div>
-
-<p><span style="font-weight: bold"> Protein phosphatase 2A regulation of leaf expansion, </span> <span style="font-style:italic;"> plant biology, </span> DeLong lab, 2023-current. </p>
-<br>
-<br>
-<p><span style="font-weight: bold">Eye-tracking art with graph theory, </span> <span style="font-style:italic;"> mathematics, cognitive science, art, </span> independent project funded by UTRA, 2022-current. </p>
-<br>
-<br>
-<p><span style="font-weight: bold">Algebraic splines, </span> <span style="font-style:italic;"> mathematics, </span> Tymoczko research group, 2021. </p>
-<br>
-<br>
-<p><span style="font-weight: bold">Deep learning to transcribe Syriac, </span> <span style="font-style:italic;"> computer science, </span> Howe research group, 2020. </p>
-<br>
-<br>
-
+    <main>
+        <p><span style="font-weight: bold"> Protein phosphatase 2A regulation of leaf expansion, </span> <span style="font-style:italic;"> plant biology, </span> DeLong lab, 2023-current. </p>
+        <br>
+        <br>
+        <p><span style="font-weight: bold">Eye-tracking art with graph theory, </span> <span style="font-style:italic;"> mathematics, cognitive science, art, </span> independent project funded by UTRA, 2022-current. </p>
+        <br>
+        <br>
+        <p><span style="font-weight: bold">Algebraic splines, </span> <span style="font-style:italic;"> mathematics, </span> Tymoczko research group, 2021. </p>
+        <br>
+        <br>
+        <p><span style="font-weight: bold">Deep learning to transcribe Syriac, </span> <span style="font-style:italic;"> computer science, </span> Howe research group, 2020. </p>
+        <br>
+        <br>
+    </main>
 </body>
 </html>

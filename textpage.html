@@ -5,28 +5,47 @@
     <title>SARAPHINA FORMAN</title>
     <style>
         body {
-/*             background: rgb(252, 166, 69);
-            background: linear-gradient(90deg, rgba(252, 166, 69, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(70, 37, 166, 1) 100%); */
-            background: rgb(255,255,255);
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
             background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
         }
-        a {
-/*             background-color: white; */
+
+        .sidebar {
+            width: 15%;
+            float: left;
+            height: 100vh;
+            /*background-color: #fff;*/
+            padding: 20px;
         }
-        p {
-            display: inline;
-            background-color: white;
-            margin-bottom: 10px;
-            float: top;
-/*             line-height: 1.5; */
-/*             padding: 10px; */
-        }
-        img {
+
+        .sidebar a {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 40vw;
-            height: auto;
+            margin-bottom: 0px; /*width between lines */
+            text-decoration: underline;
+            /*color: black;*/
+        }
+        .sidebar a:hover {
+            background-color: red;
+        }
+        /* Header Styles */
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            /*background: black;*/
+            color: rgb(0, 255, 0);
+            position: fixed;
+            top: 0;
+            left: 15%; /* Offset for the sidebar */
+            z-index: 1;
+
+        }
+        main {
+            margin-left: 15%; /* Offset for the sidebar */
+            margin-top: 100px; /* Offset for header */
+            padding: 20px;
         }
 
         .float-parent-element {
@@ -39,69 +58,47 @@
             width: 50%;
             overflow: scroll;
         }
+        p {
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 0 10px; /* Optional: adds some padding if you'd like a little space around the text */
+            display: inline-block; /* This makes the background color only cover the text */
+        }
+        a {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1><span style="color: black;text-decoration-line: none;">SARAPHINA FORMAN  </span><span style="color: white;text-decoration-line: none;">  TEXT</span></h1>
+        <h1><span>SARAPHINA FORMAN</span> <span style="color: rgb(149, 0, 255);text-decoration-line: none;">TEXT</span></h1>
     </header>
 
-    <div style="width:15%; float: left; height:100vh;">
+    <div class="sidebar">
         <a href="index.html">ART</a>
-        <br>
         <a href="videopage.html">VIDEO</a>
-        <br>
         <a href="soundpage.html">AUDIO</a>
-        <br>
         <a href="textpage.html">TEXT</a>
-        <br>
         <a href="researchpage.html">RESEARCH</a>
-        <br>
         <a href="aboutpage.html">ABOUT</a>
     </div>
 
-    <p style="font-weight: bold;">Journalism</p>
-    <br>
-    <br>
-    <p><a href="https://www.theindy.org/article/2920">Rendering Mass Incarceration: An Interview With Leonard Jefferson</a>, The Indy, 2023. </p>
-    <br>
-    <br>
-    <p><a href="https://www.wbru.com/Delayed-adolescence-halfway-sadness-and-Collectively-loving-The-Beths">Delayed adolescence, halfway-sadness, and collectively loving The Beths</a>, WBRU, 2023. </p>
-    <br>
-    <br>
-    <p><a href="https://www.wbru.com/Brooke-Surgener">Brooke Surgener and the art of suffering</a>, WBRU, 2022. </p>
-    <br>
-    <br>
-    <p><a href="https://www.theindy.org/article/2493">Redistricting Redux: How Rhode Island's flawed redistricting process could wreak havoc upon progressive movements and divide local communities</a>, The Indy, 2021. </p>
-    <br>
-    <br>
-    <p><a href="https://www.theindy.org/article/2547">Choreobotics: Dancing robots, DARPA, and the limits of art as critique</a>, The Indy, 2021. </p>
-    <br>
-    <br>
-    <p><a href="https://www.wbru.com/Field-Medic-at-Boston-Sinclair">Field Medic at The Sinclair</a>, WBRU, 2021. </p>
-
-<br>
-<br>
-<br>
-
-<!--     <p style="font-weight: bold;">Creative</p> -->
-<!--     <p><a href="https://digitalcommons.risd.edu/exhibit/8th-baker-whitehill-student-artists-books-contest-2022/facts-about-lakes/">Facts About Lakes</a>, fiction and handmade zine, 2022. </p>
-<!--     <p><a href="https://docs.google.com/document/d/1ubxw65dgVrS8jVHzCh1l1N2zBe5eaVavkTSMrdtMazA/edit?usp=sharing">A-SIDE/B-SIDE</a>, poetry, 2022. </p> -->
-    
-    <p style="font-weight: bold;">Other</p>
-    <br>
-    <br>
-    <p> <a href="https://drive.google.com/file/d/1zORDcWkyIU9bofqTn3Fbm2HBqy5tXTDb/view?usp=sharing">Wallpaper groups</a>, paper for abstract algebra course, 2023. </p>
-    <br>
-    <br>
-    <p><a href="https://digitalcommons.risd.edu/exhibit/8th-baker-whitehill-student-artists-books-contest-2022/facts-about-lakes/">Facts About Lakes</a>, fiction and handmade zine, 2022. </p>
-    <br>
-    <br>
-<!--     Blind Contour Drawings: Exploring Visual Disability in Art Creation and Appreciation 
-    https://docs.google.com/document/d/1uT0_5G0JfsLmU9H2UmukDAUlOPqzxKbET41A5nR0rK0/edit
-    Collective identity in revolutions then and now
-    https://docs.google.com/document/d/1d52odBAovpUdFTEZ_8j3oaeAEwc63pAeLFLi_I9Htfs/edit#heading=h.xvc99iro8b9o -->
-    <br>
-    
+    <main>
+        <p style="font-weight: bold; background-color: cyan;">Journalism</p>
+        <br>
+        <p><a href="https://www.theindy.org/article/2920">Rendering Mass Incarceration: An Interview With Leonard Jefferson</a>, The Indy, 2023.</p>
+        <p><a href="https://www.wbru.com/Delayed-adolescence-halfway-sadness-and-Collectively-loving-The-Beths">Delayed adolescence, halfway-sadness, and collectively loving The Beths</a>, WBRU, 2023.</p>
+        <p><a href="https://www.wbru.com/Brooke-Surgener">Brooke Surgener and the art of suffering</a>, WBRU, 2022.</p>
+        <p><a href="https://www.theindy.org/article/2493">Redistricting Redux: How Rhode Island's flawed redistricting process could wreak havoc upon progressive movements and divide local communities</a>, The Indy, 2021.</p>
+        <p><a href="https://www.theindy.org/article/2547">Choreobotics: Dancing robots, DARPA, and the limits of art as critique</a>, The Indy, 2021.</p>
+        <p><a href="https://www.wbru.com/Field-Medic-at-Boston-Sinclair">Field Medic at The Sinclair</a>, WBRU, 2021.</p>
+        
+        <br>
+        <p style="font-weight: bold; background-color: cyan;">Other</p>
+        <br>
+        <p><a href="https://drive.google.com/file/d/1zORDcWkyIU9bofqTn3Fbm2HBqy5tXTDb/view?usp=sharing">Wallpaper groups</a>, paper for abstract algebra course, 2023.</p>
+        <p><a href="https://digitalcommons.risd.edu/exhibit/8th-baker-whitehill-student-artists-books-contest-2022/facts-about-lakes/">Facts About Lakes</a>, fiction and handmade zine, 2022.</p>
+    </main>
 </body>
 </html>

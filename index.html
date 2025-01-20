@@ -2,398 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SARAPHINA FORMAN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
     <style>
         body {
-/*             background: rgb(255,255,255);
-            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%); */
-/*             jan 14 ^ black and white */
-            background: rgb(255,255,255);
-                background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(56,56,56,1) 24%, rgba(0,0,0,1) 51%, rgba(94,94,94,1) 78%, rgba(255,255,255,1) 100%);
-/*                ^ better b/w  */
-/*             background: rgb(255,179,0);
-                background: linear-gradient(180deg, rgba(255,179,0,1) 0%, rgba(231,0,51,1) 55%, rgba(48,33,157,1) 81%); */
-/*              jan 14 ^ horizontal but lots of blue at bottom
-/*          background: rgb(48,33,157);
-                background: linear-gradient(180deg, rgba(48,33,157,1) 0%, rgba(231,0,51,1) 15%, rgba(255,179,0,1) 62%);
-                jan 14^ horizontal w blue at top but can't see sidebar  */
-/*          background: rgb(255,76,0);
-                background: linear-gradient(90deg, rgba(255,76,0,1) 0%, rgba(255,179,0,1) 34%, rgba(231,0,51,1) 74%, rgba(48,33,157,1) 100%);
-                jan 14^ nice vertical but still might be too bright */
-/*          background: black; */
-/*             text-color: white; */
-/*             ^ jan 14 plain black */
-/*          text-color: black;
-            text-decoration-line: line-through;
-            text-decoration-color: #fff;
-            text-decoration-style: solid;
-            text-decoration-thickness: 100%; */
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
         }
-        a {
-/*             background-color: white; */
-        }
-        figcaption {
-/*             text-decoration-line: line-through;
-            text-decoration-color: green;
-            text-decoration-style: solid;
-            text-decoration-thickness: 100%;  
-            text-color: black; */
-            color: white;
-/*             alignment isn't doing anything btw */
-            text-align: center;
-/*             left: 50%; */
-/*             background-color: white; */
-            display: inline-block;
-        }
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 80%;
-            height: auto;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-        .float-parent-element { 
-            width: 85%; 
-            float: left;
-        } 
-        .float-child-element { 
-            float: left; 
-            width: 50%; 
-        }
-        .image-container {
-            position: relative;
-            cursor: pointer;
+        /* Sidebar Styles */
+        #sidebar {
+            width: 15%;
+            /*background-color: #f5f5f5;*/
+            padding: 20px;
+            /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);*/
         }
 
+        #sidebar a {
+            text-decoration: underline;
+            /*color: black;*/
+            display: block;
+            margin-bottom: 0px; /*width between lines */
+        }
+
+        #sidebar a:hover {
+            color: red;
+        }
+
+        /* Header Styles */
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+            /*background: black;*/
+            color: rgb(0, 255, 0);
+            position: fixed;
+            top: 0;
+            left: 15%; /* Offset for the sidebar */
+            z-index: 1;
+
+        }
+        /* this part makes a little box around the header, but i dont like it. */
+        /* header h1 {
+            margin: 0;
+        }
+
+        header span {
+            display: inline-block;
+        }
+
+        header span:nth-child(1) {
+            color: black;
+            background: white;
+            padding: 0 5px;
+        }
+
+        header span:nth-child(2) {
+            padding: 0 5px;
+        } */
+
+        /* Gallery Styles */
+        #gallery-container {
+            width: 85%;
+            margin-left: 15%;
+            margin-top: 100px; /* Offset for header */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 0px;
+            /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+        }
+
+        figcaption {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Fullscreen Styles */
         .fullscreen {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
+            background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            display: none;
+            flex-direction: column;
+            z-index: 1000;
         }
 
         .fullscreen img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            max-width: 90%;
+            max-height: 80%;
+            margin-bottom: 20px;
+            border: none;
         }
 
-        .caption {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-/*             color: black; */
+        .fullscreen .caption {
             color: white;
-/*             background-color: white; */
-            background-color: none;
+            font-size: 18px;
             text-align: center;
-            font-size: 1.2em;
-        }
-        #fullscreen-hiddenButton {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 30px; 
-/*             margin-left: 8px;
-            margin-top: 8px;
-            float: left; */
         }
 
+        .fullscreen .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #sidebar {
+                display: none;
+            }
+
+            header {
+                left: 0;
+                width: 100%;
+            }
+
+            #gallery-container {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("img").forEach((img) => {
-          img.setAttribute("loading", "lazy");
-        });
-      });
-    </script>
-
-    <header>
-        <h1><span style="color: black;">SARAPHINA FORMAN</span><span style="color: white;">  ART</span></h1>
-    </header>
-    
-    <div style="width:15%; float: left; vertical-align: 0px;">
+    <!-- Sidebar -->
+    <div id="sidebar">
         <a href="index.html">ART</a>
-        <br>
         <a href="videopage.html">VIDEO</a>
-        <br>
         <a href="soundpage.html">AUDIO</a>
-        <br>
         <a href="textpage.html">TEXT</a>
-        <br>
         <a href="researchpage.html">RESEARCH</a>
-        <br>
         <a href="aboutpage.html">ABOUT</a>
     </div>
 
-    <div class="float-parent-element">
-        <div class="float-child-element">  
-            <div style="opacity: 100%">
-                <div class="image-container" onclick="showFullscreen('art_rn_more/zipper.jpeg', 'Zipper, oil, acrylic, collage, wood glue, spray paint on sewn fabric with zipper, 2\'x4\', 2024.')">
-                    <img src="art_rn_more/zipper.jpeg" alt="Zipper">
-                    <figcaption>"Zipper," oil, acrylic, collage, wood glue, spray paint on sewn fabric with zipper, 2\'x4\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/slingshot.jpeg', 'Slingshot, assemblage with spackle on wood, 10\'\'x10\'\', 2024.')">
-                    <img src="art_rn_more/slingshot.jpeg" alt="Slingshot">
-                    <figcaption>"Slingshot," assemblage with spackle on wood, 10\'\'x10\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/gridglue.jpeg', 'Window, glue and fabric on wood panel, 6\'\'x6\'\', 2024.')">
-                    <img src="art_rn_more/gridglue.jpeg" alt="Window">
-                    <figcaption>"Window," glue and fabric on wood panel, 6\'\'x6\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/orangepaisley.jpeg', 'Stripe Relief, oil and clay on wood, 11\'\'x14\'\', 2024.')">
-                    <img src="art_rn_more/stripeclay.jpeg" alt="Stripe Relief">
-                    <figcaption>"Stripe Relief," oil and clay on wood, 11\'\'x14\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/orangepaisley.jpeg', 'Snow Figure, oil on masonite, 9\'\'x12\'\', 2024.')">
-                    <img src="art_rn_more/snowfigure.jpeg" alt="Snow">
-                    <figcaption>"Snow Figure," oil on masonite, 9\'\'x12\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/orangepaisley.jpeg', 'Orange Paisley, oil, acrylic, white out pen, marker, matte medium, gesso on fabric, 18\'\'x24\'\', 2024.')">
-                    <img src="art_rn_more/orangepaisley.jpeg" alt="Orange Paisley">
-                    <figcaption>"Orange Paisley," oil, acrylic, white out pen, marker, matte medium, gesso on fabric, 18\'\'x24\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/cabinet.jpeg', 'Cabinet Assemblage, dremel, found cabinet drawer, glue, oil paint, collage, acrylic on wood panel, 42\'\'x42\'\', 2024.')">
-                    <img src="art_rn_more/cabinet.jpeg" alt="Cabinet">
-                    <figcaption>"Cabinet Assemblage," dremel, found cabinet drawer, glue, oil paint, collage, acrylic on wood panel, 42\'\'x42\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/burlapindigo.jpeg', 'Map, indigo, oil, wood glue, acrylic, pastel on burlap, 18\'\' x24\'\', 2024.')">
-                    <img src="art_rn_more/burlapindigo.jpeg" alt="Map">
-                    <figcaption>"Map," indigo, oil, wood glue, acrylic, pastel on burlap, 18\'\' x24\'\', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/colorkim.jpeg', 'Kim Gordon in Color, oil, acrylic, glued canvas, glued wood on vanvas, 2\' x 4', 2024.')">
-                    <img src="art_rn_more/colorkim.jpeg" alt="Cabinet">
-                    <figcaption>"Kim Gordon in Color," oil, acrylic, glued canvas, glued wood on canvas, 2\' x 4', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/kimgordon.png', 'Hometown/Kim Gordon, acrylic and matte medium on canvas, 2\'x4\', 2024.')">
-                    <img src="art_rn_more/kimgordon.png" alt="Kim Gordon">
-                    <figcaption>"Kim Gordon," acrylic and matte medium on canvas, 2'x4', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/vitals2.png', 'Vitals, oil, charcoal, acrylic, oil pastel, and airbrush on cardboard, 3\'x4\', 2024.')">
-                    <img src="art_rn_more/vitals2.png" alt="Vitals">
-                    <figcaption>"Vitals," oil, charcoal, acrylic, oil pastel, and airbrush on cardboard, 3'x4', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/dog.png', 'Dog, mixed media on MDF sculpture, 3\'x3\', 2024.')">
-                    <img src="art_rn_more/dog.png" alt="Dog">
-                    <figcaption>"Dog," mixed media on MDF sculpture, 3'x3', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/cantread_kaiju.png', 'Can\'t Reach/Read, mixed media on canvas, 8\'x10\', 2024.')">
-                    <img src="art_rn_more/cantread_kaiju.png" alt="Cant Reach/Read">
-                    <figcaption>"Can't Reach/Read," mixed media on canvas, 8'x10', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('brickedoverwindows.png', 'Bricked Over Windows, oil, charcoal, oil pastel, and spackling paste on canvas, 3\'x4\', 2023.')">
-                    <img src="brickedoverwindows.png" alt="Bricked Over Windows">
-                    <figcaption>"Bricked Over Windows," oil, charcoal, oil pastel, and spackling paste on canvas, 3'x4', 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/johopper_i_kaiju.png', 'Jo Hopper I, mixed media on cloth, 8\'x10\', 2024. Collaboration with Rafe DiDomenico.')">
-                    <img src="art_rn_more/johopper_i_kaiju.png" alt="Jo Hopper I">
-                    <figcaption>"Jo Hopper I," mixed media on cloth, 8'x10', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('paintedover1.png', 'Painted Over I, oil on masonite, 9\'\'x12\'\', 2023.')">
-                    <img src="paintedover1.png" alt="Painted Over I">
-                    <figcaption>"Painted Over I," oil on masonite, 9"x12", 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('paintedover2.png', 'Painted Over II, acrylic on masonite panel, 38\'\'x42\'\', 2023.')">
-                    <img src="paintedover2.png" alt="Painted Over II">
-                    <figcaption>"Painted Over II," acrylic on masonite panel, 38"x42", 2023.</figcaption>
-                </div>
-                <br>                        
-                <div class="image-container" onclick="showFullscreen('art_rn_more/ire%20copy.jpeg', 'Ire Lying Down, oil on piece of wood floor, 2\'x4\', 2023.')">
-                    <img src="art_rn_more/ire%20copy.jpeg" alt="Ire">
-                    <figcaption>"Ire Lying Down," oil on piece of wood floor, 2'x4', 2023.</figcaption>
-                </div>
-                <br>      
-                <div class="image-container" style="color: black;" onclick="showFullscreen('art_rn_more/mattress.png', 'Mattress, acrylic on sheet and wire mattress frame, 3.5\'x7\', 2022.')">
-                    <img src="art_rn_more/mattress.png" alt="Mattress">
-                    <figcaption >"Mattress," acrylic on sheet and wire mattress frame, 3.5'x7', 2023.</figcaption>
-                </div>
-                <br>  
-                <div class="image-container" onclick="showFullscreen('art_rn_more/rafebillie.JPEG', 'Rafe and Billie, oil on canvas, 4\'x4\', 2022.')">
-                    <img src="art_rn_more/rafebillie.JPEG" alt="Rafe and Billie">
-                    <figcaption>"Rafe and Billie," oil on canvas, 4'x4', 2022.</figcaption>
-                </div>
-                <br>  
-                <div class="image-container" onclick="showFullscreen('art_rn_more/crumple.JPEG', 'Crumple, homemade oil on canvas, 9\'\'x12\'\', 2022.')">
-                    <img src="art_rn_more/crumple.JPEG" alt="Crumple">
-                    <figcaption>"Crumple," handmade oil on masonite, 9"x12", 2022.</figcaption>
-                </div>
-                <br>        
-                <div class="image-container" onclick="showFullscreen('art_rn_more/wood%20pallet%20painting.JPEG', 'Wood Pallet Painting, acrylic on canvas stretched on wood pallet, 3.5\'x4\', 2022.')">
-                    <img src="art_rn_more/wood%20pallet%20painting.JPEG" alt="Wood Pallet Painting">
-                    <figcaption>"Wood Pallet Painting," acrylic on canvas stretched on wood pallet, 3.5'x4', 2022.</figcaption>
-                </div>
-                <br>   
-                <div class="image-container" onclick="showFullscreen('art_rn_more/the%20rest,%20the%20view.png', 'The Rest, The View, acrylic on canvas, 3\'x4\', 2023.')">
-                    <img src="art_rn_more/the%20rest,%20the%20view.png" alt="The Rest, The View">
-                    <figcaption>"The Rest, The View," acrylic on canvas, 3.5'x4', 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/seventh%20graders.JPEG', 'Seventh Graders, photo transfer and acrylic on wood, 10\'\'x10\'\', 2022.')">
-                    <img src="art_rn_more/seventh%20graders.JPEG" alt="Seventh Graders">
-                    <figcaption>"Seventh Graders," photo transfer and acrylic on wood, 10"x10", 2022.</figcaption>
-                </div>
-                <br> 
-                <div class="image-container" onclick="showFullscreen('art_rn_more/lizards%20copy.jpeg', 'Lizards, oil, spackling paste, and graphite on canvas, 14\'\'x14\'\', 2023.')">
-                    <img src="art_rn_more/lizards%20copy.jpeg" alt="Lizards">
-                    <figcaption>"Lizards," oil, spackling paste, and graphite on canvas, 14"x14", 2023.</figcaption>
-                </div>
-                <br>  
-                <div class="image-container" onclick="showFullscreen('art_rn_more/oil%20light%20studies%20copy.jpeg', 'Oil Light Studies, oil on unstretched canvas, 18\'\' x22\'\' each, 2023.')">
-                    <img src="art_rn_more/oil%20light%20studies%20copy.jpeg" alt="Oil Light Studies">
-                    <figcaption>"Oil Light Studies," oil on unstretched canvas, 18" x22" each, 2023.</figcaption>
-                </div>
-                <br>        
-                <div class="image-container" onclick="showFullscreen('art_rn_more/oldman%20copy.jpeg', 'Man In Car, oil on masonite, 9\'\'x12\'\', 2023.')">
-                    <img src="art_rn_more/oldman%20copy.jpeg" alt="Man In Cr">
-                    <figcaption>"Man In Car," oil on masonite, 9"x12", 2023.</figcaption>
-                </div>
-                <br>        
-               <div class="image-container" onclick="showFullscreen('art_rn_more/living%20room.JPEG', 'Living Room, acrylic on canvas, 3\'x4.5\', 2022.')">
-                    <img src="art_rn_more/living%20room.JPEG" alt="Living Room">
-                    <figcaption>"Living Room," acrylic on canvas, 3'x4.5', 2022.</figcaption>
-                </div>
-                <br>  
-                <div class="image-container" onclick="showFullscreen('art_rn_more/blue%20rectangles%20copy.jpeg', 'Small Blue Prints, acrylic on paper, 18\'\'x24\'\', 2023.')">
-                    <img src="art_rn_more/blue%20rectangles%20copy.jpeg" alt="Small Blue Prints">
-                    <figcaption>"Small Blue Prints," acrylic on paper, 18"x24", 2023.</figcaption>
-                </div>
-                <br> 
-            </div>
-        </div>
-        <div class="float-child-element">
-            <div style="opacity: 100%">        
-                <div class="image-container" onclick="showFullscreen('art_rn_more/braid_bend.png', 'Braid/Bend, acrylic and airbrush on cardboard, 4\'x3\', 2024.')">
-                    <img src="art_rn_more/braid_bend.png" alt="Braid Bend">
-                    <figcaption>"Braid/Bend," acrylic and airbrush on cardboard, 4'x3', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/door.png', 'Door, mixed media sculpture, 2.5\'x8\', 2024. Collaboration with Amick Sollenberger.')">
-                    <img src="art_rn_more/door.png" alt="Door">
-                    <figcaption>"Door," mixed media sculpture, 2.5'x8', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/bandboard.jpeg', 'Math, acrylic, screws, rubber bands, hinge, handle on MDF, 12\'\'x10\'\', 2024.')">
-                    <img src="art_rn_more/bandboard.jpeg" alt="Math">
-                    <figcaption>"Math," acrylic, screws, rubber bands, hinge, handle on MDF, 12"x10", 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('figureatdesk.jpeg', 'Figure at Desk, acrylic on stretched fabric, 24\'\'x32\'\', 2023.')">
-                    <img src="figureatdesk.jpeg" alt="Figure at Desk">
-                    <figcaption>"Figure at Desk," acrylic on stretched fabric, 24"x32", 2023.</figcaption>
-                </div>
-                <br>    
-                <div class="image-container" onclick="showFullscreen('art_rn_more/johopper_ii_kaiju.png', 'Jo Hopper II, mixed media on table cloth, 8\'x6\', 2024. Collaboration with Rafe DiDomenico.')">
-                    <img src="art_rn_more/johopper_ii_kaiju.png" alt="Jo Hopper II">
-                    <figcaption>"Jo Hopper II," mixed media on table cloth, 8'x6', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('evanandryan.png', 'Evan and Ryan, oil on canvas, 42\'\'x48\'\', 2023.')">
-                    <img src="evanandryan.png" alt="Evan and Ryan">
-                    <figcaption>"Evan and Ryan," oil on canvas, 42"x48", 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/creature.JPEG', 'Creature Scene, oil on masonite, 9\'\'x12\'\', 2022.')">
-                    <img src="art_rn_more/creature.JPEG" alt="Creature">
-                    <figcaption>"Creature Scene," oil on masonite, 9"x12", 2022.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('recliningfigure.png', 'Reclining Figure in my Room, acrylic on stretched fabric, 30\'\'x36\'\', 2023.')">
-                    <img src="recliningfigure.png" alt="Reclining Figure in my Room">
-                    <figcaption>"Reclining Figure in my Room," acrylic on stretched fabric, 30"x36", 2023.</figcaption>
-                </div>
-                <br> 
-                <div class="image-container" onclick="showFullscreen('sandeddown.png', 'Sanded Down Collection, acrylic and collage on various masonite and canvas panels, 2023.')">
-                    <img src="sandeddown.png" alt="Sanded Down Collection">
-                    <figcaption>"Sanded Down Collection," acrylic and collage on masonite and canvas panels (10"x24"; 9"x12"; 9"x12"; 9"x12), 2023.</figcaption>
-                </div>
-                <br> 
-                <div class="image-container" onclick="showFullscreen('art_rn_more/gumball_keyboard_kaiju.png', 'Gumball/Keyboard, mixed media on canvas, 8\'x10\', 2024. Collaboration with Rafe DiDomenico.')">
-                    <img src="art_rn_more/gumball_keyboard_kaiju.png" alt="Gumball/Keyboard">
-                    <figcaption>"Gumball/Keyboard," mixed media on canvas, 8'x10', 2024.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('tablescene.png', 'Table Scene, oil on canvas, 5\'x6\', 2023.')">
-                    <img src="tablescene.png" alt="Table Scene">
-                    <figcaption>"Table Scene," oil on canvas, 5'x6', 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/function(collage%20in%20paint).png', 'Function (Collage in Paint), oil on canvas, 5\'x6\', 2023.')">
-                    <img src="art_rn_more/function(collage%20in%20paint).png" alt="Function (Collage in Paint)">
-                    <figcaption>"Function (Collage in Paint)," oil on canvas, 5'x6', 2023.</figcaption>
-                </div>
-                <br>        
-                <div class="image-container" onclick="showFullscreen('art_rn_more/big%20kid%20(exhausting%20a%20place)_seethrough.png', 'Big Kid (Exhausting a Place), acrylic and ballpoint pen on canvas, 2.5\'x3.5\', 2023.')">
-                    <img src="art_rn_more/big%20kid%20(exhausting%20a%20place)_seethrough.png" alt="Big Kid (Exhausting a Place)">
-                    <figcaption>"Big Kid (Exhausting a Place)," acrylic and ballpoint pen on canvas, 2.5'x3.5', 2023.</figcaption>
-                </div>
-                <br>          
-                <div class="image-container" style="color: black;" onclick="showFullscreen('art_rn_more/remember%20it.png', 'You\'re Right, I Can\'t Remember It Much Now, monoprint, 11\'\'x17\'\', 2023.')">
-                    <img src="art_rn_more/remember%20it.png" alt="You're Right, I Can't Remember It Much Now">
-                    <figcaption >"You're Right, I Can't Remember It Much Now," monoprint, 11"x17", 2023.</figcaption>
-                </div>
-                <br>        
-                <div class="image-container" style="color: black;" onclick="showFullscreen('art_rn_more/four%20sons.png', 'Four Sons, cyanotype and dye on stitched canvas, 2\'x4\', 2023.')">
-                    <img src="art_rn_more/four%20sons.png" alt="Four Sons">
-                    <figcaption >"Four Sons," cyanotype and dye on stitched canvas, 4'x5', 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/four%20sons%20on%20grass.png', 'Four Sons on Grass, oil on canvas, 2\'x4\', 2023.')">
-                    <img src="art_rn_more/four%20sons%20on%20grass.png" alt="Four Sons on Grass">
-                    <figcaption>"Four Sons on Grass," oil on canvas, 2'x4', 2023.</figcaption>
-                </div>
-                <br>
-                <div class="image-container" onclick="showFullscreen('art_rn_more/type%20of%20life.png', 'Type of Life, oil on canvas, 3\'x4\', 2023.')">
-                    <img src="art_rn_more/type%20of%20life.png" alt="Type of Life">
-                    <figcaption>"Type of Life," oil on canvas, 2.5'x4', 2023.</figcaption>
-                </div>
-                <br>                
-                <div class="image-container" onclick="showFullscreen('art_rn_more/blue%20collection.png', 'Blue Collection, oil on canvas, 3\'x4\', 2023.')">
-                    <img src="art_rn_more/blue%20collection.png" alt="Blue Collection">
-                    <figcaption>"Blue Collection," oil on canvas, 3'x4', 2023.</figcaption>
-                </div>
-                <br> 
-                <div class="image-container" onclick="showFullscreen('art_rn_more/red%20collection.png', 'Red Collection, acrylic and oil pastel on cardboard, 3\'x4\', 2023.')">
-                    <img src="art_rn_more/red%20collection.png" alt="Red Collection">
-                    <figcaption>"Red Collection," acrylic and oil pastel on cardboard, 3'x4', 2023.</figcaption>
-                </div>
-                <br> 
-                <div class="image-container" style="color: black;"onclick="showFullscreen('art_rn_more/hopewerenotabuta.png', 'Hope We\'re Not A ___ But A ___, acrylic and clay on piece of wood floor, 4.5\'x4\', 2023. Collaboration with Billie Wynn.')">
-                    <img src="art_rn_more/hopewerenotabuta.png" alt="Hope We're Not A ___ But A ___">
-                    <figcaption>"Hope We're Not A ___ But A ___," acrylic and clay on piece of wood floor, 4.5'x4', 2023.</figcaption>
-                </div>
-                <br> 
-            </div>
-        </div>
+    <!-- Header -->
+    <header>
+        <h1><span>SARAPHINA FORMAN</span><span style="color: rgb(149, 0, 255);> ART</span></h1>
+    </header>
+
+    <!-- Gallery -->
+    <div id="gallery-container">
+        <div id="gallery"></div>
     </div>
 
+    <!-- Fullscreen -->
     <div class="fullscreen" id="fullscreen">
         <span onclick="closeFullscreen()" class="close-btn">&times;</span>
         <img id="fullscreen-image" src="" alt="Fullscreen Image">
@@ -402,37 +182,254 @@
     </div>
 
     <script>
-        var scrollPosition;
-        
+        const images = [
+        {
+            "src": "art_rn_more/zipper.jpeg",
+            "description": "\"Zipper,\" oil, acrylic, collage, wood glue, spray paint on sewn fabric with zipper, 2'x4', 2024."
+        },
+        {
+            "src": "art_rn_more/slingshot.jpeg",
+            "description": "\"Slingshot,\" assemblage with spackle on wood, 10''x10'', 2024."
+        },
+        {
+            "src": "art_rn_more/gridglue.jpeg",
+            "description": "\"Window,\" glue and fabric on wood panel, 6''x6'', 2024."
+        },
+        {
+            "src": "art_rn_more/stripeclay.jpeg",
+            "description": "\"Stripe Relief,\" oil and clay on wood, 11''x14'', 2024."
+        },
+        {
+            "src": "art_rn_more/snowfigure.jpeg",
+            "description": "\"Snow Figure,\" oil on masonite, 9''x12'', 2024."
+        },
+        {
+            "src": "art_rn_more/orangepaisley.jpeg",
+            "description": "\"Orange Paisley,\" oil, acrylic, white out pen, marker, matte medium, gesso on fabric, 18''x24'', 2024."
+        },
+        {
+            "src": "art_rn_more/cabinet.jpeg",
+            "description": "\"Cabinet Assemblage,\" dremel, found cabinet drawer, glue, oil paint, collage, acrylic on wood panel, 42''x42'', 2024."
+        },
+        {
+            "src": "art_rn_more/burlapindigo.jpeg",
+            "description": "\"Map,\" indigo, oil, wood glue, acrylic, pastel on burlap, 18'' x24'', 2024."
+        },
+        {
+            "src": "art_rn_more/colorkim.jpeg",
+            "description": "\"Kim Gordon in Color,\" oil, acrylic, glued canvas, glued wood on canvas, 2' x 4', 2024."
+        },
+        {
+            "src": "art_rn_more/kimgordon.png",
+            "description": "\"Kim Gordon,\" acrylic and matte medium on canvas, 2'x4', 2024."
+        },
+        {
+            "src": "art_rn_more/vitals2.png",
+            "description": "\"Vitals,\" oil, charcoal, acrylic, oil pastel, and airbrush on cardboard, 3'x4', 2024."
+        },
+        {
+            "src": "art_rn_more/dog.png",
+            "description": "\"Dog,\" mixed media on MDF sculpture, 3'x3', 2024."
+        },
+        {
+            "src": "art_rn_more/cantread_kaiju.png",
+            "description": "\"Can't Reach/Read,\" mixed media on canvas, 8'x10', 2024."
+        },
+        {
+            "src": "brickedoverwindows.png",
+            "description": "\"Bricked Over Windows,\" oil, charcoal, oil pastel, and spackling paste on canvas, 3'x4', 2023."
+        },
+        {
+            "src": "art_rn_more/johopper_i_kaiju.png",
+            "description": "\"Jo Hopper I,\" mixed media on cloth, 8'x10', 2024. Collaboration with Rafe DiDomenico."
+        },
+        {
+            "src": "paintedover1.png",
+            "description": "\"Painted Over I,\" oil on masonite, 9\"x12\", 2023."
+        },
+        {
+            "src": "paintedover2.png",
+            "description": "\"Painted Over II,\" acrylic on masonite panel, 38\"x42\", 2023."
+        },
+        {
+            "src": "art_rn_more/ire%20copy.jpeg",
+            "description": "\"Ire Lying Down,\" oil on piece of wood floor, 2'x4', 2023."
+        },
+        {
+            "src": "art_rn_more/mattress.png",
+            "description": "\"Mattress,\" acrylic on sheet and wire mattress frame, 3.5'x7', 2023."
+        },
+        {
+            "src": "art_rn_more/rafebillie.JPEG",
+            "description": "\"Rafe and Billie,\" oil on canvas, 4'x4', 2022."
+        },
+        {
+            "src": "art_rn_more/crumple.JPEG",
+            "description": "\"Crumple,\" handmade oil on masonite, 9\"x12\", 2022."
+        },
+        {
+            "src": "art_rn_more/wood%20pallet%20painting.JPEG",
+            "description": "\"Wood Pallet Painting,\" acrylic on canvas stretched on wood pallet, 3.5'x4', 2022."
+        },
+        {
+            "src": "art_rn_more/the%20rest,%20the%20view.png",
+            "description": "\"The Rest, The View,\" acrylic on canvas, 3.5'x4', 2023."
+        },
+        {
+            "src": "art_rn_more/seventh%20graders.JPEG",
+            "description": "\"Seventh Graders,\" photo transfer and acrylic on wood, 10\"x10\", 2022."
+        },
+        {
+            "src": "art_rn_more/lizards%20copy.jpeg",
+            "description": "\"Lizards,\" oil, spackling paste, and graphite on canvas, 14\"x14\", 2023."
+        }
+        {
+            "src": "art_rn_more/oil%20light%20studies%20copy.jpeg",
+            "description": "\"Oil Light Studies,\" oil on unstretched canvas, 18\" x22\" each, 2023."
+        },
+        {
+            "src": "art_rn_more/oldman%20copy.jpeg",
+            "description": "\"Man In Car,\" oil on masonite, 9\"x12\", 2023."
+        },
+        {
+            "src": "art_rn_more/living%20room.JPEG",
+            "description": "\"Living Room,\" acrylic on canvas, 3'x4.5', 2022."
+        },
+        {
+            "src": "art_rn_more/blue%20rectangles%20copy.jpeg",
+            "description": "\"Small Blue Prints,\" acrylic on paper, 18\"x24\", 2023."
+        },
+        {
+            "src": "art_rn_more/braid_bend.png",
+            "description": "\"Braid/Bend,\" acrylic and airbrush on cardboard, 4'x3', 2024."
+        },
+        {
+            "src": "art_rn_more/door.png",
+            "description": "\"Door,\" mixed media sculpture, 2.5'x8', 2024. Collaboration with Amick Sollenberger."
+        },
+        {
+            "src": "art_rn_more/bandboard.jpeg",
+            "description": "\"Math,\" acrylic, screws, rubber bands, hinge, handle on MDF, 12\"x10\", 2024."
+        },
+        {
+            "src": "figureatdesk.jpeg",
+            "description": "\"Figure at Desk,\" acrylic on stretched fabric, 24\"x32\", 2023."
+        },
+        {
+            "src": "art_rn_more/johopper_ii_kaiju.png",
+            "description": "\"Jo Hopper II,\" mixed media on table cloth, 8'x6', 2024. Collaboration with Rafe DiDomenico."
+        },
+        {
+            "src": "evanandryan.png",
+            "description": "\"Evan and Ryan,\" oil on canvas, 42\"x48\", 2023."
+        },
+        {
+            "src": "art_rn_more/creature.JPEG",
+            "description": "\"Creature Scene,\" oil on masonite, 9\"x12\", 2022."
+        },
+        {
+            "src": "recliningfigure.png",
+            "description": "\"Reclining Figure in my Room,\" acrylic on stretched fabric, 30\"x36\", 2023."
+        },
+        {
+            "src": "sandeddown.png",
+            "description": "\"Sanded Down Collection,\" acrylic and collage on masonite and canvas panels (10\"x24\"; 9\"x12\"; 9\"x12\"; 9\"x12), 2023."
+        },
+        {
+            "src": "art_rn_more/gumball_keyboard_kaiju.png",
+            "description": "\"Gumball/Keyboard,\" mixed media on canvas, 8'x10', 2024. Collaboration with Rafe DiDomenico."
+        },
+        {
+            "src": "tablescene.png",
+            "description": "\"Table Scene,\" oil on canvas, 5'x6', 2023."
+        },
+        {
+            "src": "art_rn_more/function(collage%20in%20paint).png",
+            "description": "\"Function (Collage in Paint),\" oil on canvas, 5'x6', 2023."
+        },
+        {
+            "src": "art_rn_more/big%20kid%20(exhausting%20a%20place)_seethrough.png",
+            "description": "\"Big Kid (Exhausting a Place),\" acrylic and ballpoint pen on canvas, 2.5'x3.5', 2023."
+        },
+        {
+            "src": "art_rn_more/remember%20it.png",
+            "description": "\"You're Right, I Can't Remember It Much Now,\" monoprint, 11\"x17\", 2023."
+        },
+        {
+            "src": "art_rn_more/four%20sons.png",
+            "description": "\"Four Sons,\" cyanotype and dye on stitched canvas, 2'x4', 2023."
+        },
+        {
+            "src": "art_rn_more/four%20sons%20on%20grass.png",
+            "description": "\"Four Sons on Grass,\" oil on canvas, 2'x4', 2023."
+        }
+        {
+            src: "art_rn_more/type%20of%20life.png",
+            description: "\"Type of Life,\" oil on canvas, 2.5'x4', 2023."
+        },
+        {
+            src: "art_rn_more/blue%20collection.png",
+            description: "\"Blue Collection,\" oil on canvas, 3'x4', 2023."
+        },
+        {
+            src: "art_rn_more/red%20collection.png",
+            description: "\"Red Collection,\" acrylic and oil pastel on cardboard, 3'x4', 2023."
+        },
+        {
+            src: "art_rn_more/hopewerenotabuta.png",
+            description: "\"Hope We're Not A ___ But A ___,\" acrylic and clay on piece of wood floor, 4.5'x4', 2023. Collaboration with Billie Wynn."
+        }
+        ];
+    
         function showFullscreen(imageSrc, captionText) {
+            // Preserve the scroll position
             scrollPosition = window.scrollY;
+    
+            // Get elements for fullscreen view
             const fullscreen = document.getElementById('fullscreen');
             const fullscreenImage = document.getElementById('fullscreen-image');
             const fullscreenCaption = document.getElementById('fullscreen-caption');
-            // const fullscreenButton = document.getElementById('hiddenButton');
             
+            // Set the source of the image and the caption text
             fullscreenImage.src = imageSrc;
             fullscreenCaption.textContent = captionText;
-            // fullscreenButton.textContent = buttonElement;
-
+    
+            // Show the fullscreen view
             fullscreen.style.display = 'flex';
-            // buttonElement.style.display = 'block';
-            // buttonElement.style.z-index = 9999;
-            //then try commenting these out, then try deleting the hiddenbutton thing
         }
-
+    
         function closeFullscreen() {
+            // Hide the fullscreen view and restore scroll position
             document.getElementById('fullscreen').style.display = 'none';
-            //window.location.href='index.html'
             window.scrollTo(0, scrollPosition);
         }
+    
+        // Populate the gallery
+        const gallery = document.getElementById("gallery");
+    
+        images.forEach(({ src, description }) => {
+            const [title] = description.split(",").map(str => str.trim());
+    
+            const container = document.createElement("div");
+            container.className = "image-container";
+            
+            // Attach a click event directly to the image container
+            container.addEventListener('click', () => {
+                showFullscreen(src, description);
+            });
+    
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = title;
+            container.appendChild(img);
+    
+            const caption = document.createElement("figcaption");
+            caption.textContent = description;
+            container.appendChild(caption);
+    
+            gallery.appendChild(container);
+        });
     </script>
-
-    <p id="for_google" style="display:none;"> This is my art portfolio. This is Saraphina's portfolio. This is saraphina's art portfolio. Saraphina is a painter. this is saraphina's painting portfolio. saraphina forman portfolio. saraphina artist. sound art music writing reading college providence.</p>
-
+    
 </body>
 </html>
-
-</body>
-</html>
- -->
