@@ -112,6 +112,14 @@
     </style>
 </head>
 <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("img").forEach((img) => {
+          img.setAttribute("loading", "lazy");
+        });
+      });
+    </script>
+
     <header>
         <h1><span style="color: black;">SARAPHINA FORMAN</span><span style="color: white;">  ART</span></h1>
     </header>
